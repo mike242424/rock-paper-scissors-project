@@ -25,12 +25,12 @@ const getComputerChoice = function () {
 };
 
 const determineWinner = function (userChoice, computerChoice) {
-  if (userChoice === computerChoice) {
-    return "The game was a tie!";
-  }
-
   if (userChoice === "bomb") {
     return "The user has won!";
+  }
+  
+  if (userChoice === computerChoice) {
+    return "The game was a tie!";
   }
 
   if (userChoice === "rock") {
