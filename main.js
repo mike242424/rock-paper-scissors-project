@@ -1,4 +1,4 @@
-let getUserChoice = function (userInput) {
+const getUserChoice = function (userInput) {
   userInput = userInput.toLowerCase();
   if (userInput === "rock") {
     return userInput;
@@ -25,7 +25,7 @@ let getComputerChoice = function () {
   }
 };
 
-let determineWinner = function (userChoice, computerChoice) {
+const determineWinner = function (userChoice, computerChoice) {
   if (userChoice === computerChoice) {
     return "The game was a tie!";
   }
@@ -59,7 +59,7 @@ let determineWinner = function (userChoice, computerChoice) {
   }
 };
 
-let playGame = function () {
+const playGame = function () {
   let userChoice = getUserChoice("bomb");
   let computerChoice = getComputerChoice();
   console.log("User choice: " + userChoice);
