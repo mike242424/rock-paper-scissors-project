@@ -1,4 +1,4 @@
-let getUserChoice = function (userInput) {
+const getUserChoice = function (userInput) {
   userInput = userInput.toLowerCase();
   if (
     userInput === "rock" ||
@@ -8,22 +8,23 @@ let getUserChoice = function (userInput) {
   ) {
     return userInput;
   } else {
-    console.log("Error...please enter 'rock', 'paper', or 'scissors'");
+    console.log("Error: Please enter 'rock', 'paper', or 'scissors'");
+    return userInput;
   }
 };
 
-let getComputerChoice = function () {
-  getComputerChoice = Math.floor(Math.random() * 3);
-  if (getComputerChoice === 0) {
+const getComputerChoice = function () {
+  const randomNumber = Math.floor(Math.random() * 3);
+  if (randomNumber === 0) {
     return "rock";
-  } else if (getComputerChoice === 1) {
+  } else if (randomNumber === 1) {
     return "paper";
-  } else if (getComputerChoice === 2) {
+  } else if (randomNumber === 2) {
     return "scissors";
   }
 };
 
-let determineWinner = function (userChoice, computerChoice) {
+const determineWinner = function (userChoice, computerChoice) {
   if (userChoice === computerChoice) {
     return "The game was a tie!";
   }
@@ -57,12 +58,14 @@ let determineWinner = function (userChoice, computerChoice) {
   }
 };
 
-let playGame = function () {
-  let userChoice = getUserChoice("bomb");
-  let computerChoice = getComputerChoice();
+const playGame = function (userInput) {
+  const userChoice = getUserChoice(userInput);
+  const computerChoice = getComputerChoice();
   console.log("User choice: " + userChoice);
   console.log("Computer choice: " + computerChoice);
   console.log(determineWinner(userChoice, computerChoice));
 };
 
-playGame();
+var userInput = prompt();
+
+playGame(userInput);
