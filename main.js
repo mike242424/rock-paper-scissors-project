@@ -8,7 +8,7 @@ const getUserChoice = function (userInput) {
   ) {
     return userInput;
   } else {
-    console.log("Error: Please enter 'rock', 'paper', or 'scissors'");
+    console.log("Error: Please enter rock, paper, or scissors");
     return userInput;
   }
 };
@@ -25,12 +25,12 @@ const getComputerChoice = function () {
 };
 
 const determineWinner = function (userChoice, computerChoice) {
-  if (userChoice === "bomb") {
-    return "The user has won!";
-  }
-  
   if (userChoice === computerChoice) {
     return "The game was a tie!";
+  }
+
+  if (userChoice === "bomb") {
+    return "The user has won!";
   }
 
   if (userChoice === "rock") {
@@ -66,6 +66,6 @@ const playGame = function (userInput) {
   console.log(determineWinner(userChoice, computerChoice));
 };
 
-var userInput = prompt();
+var userInput = prompt("Choose rock, paper, or scissors...");
 
 playGame(userInput);
