@@ -1,16 +1,14 @@
-const getUserChoice = function (userInput) {
+let getUserChoice = function (userInput) {
   userInput = userInput.toLowerCase();
-  if (userInput === "rock") {
-    return userInput;
-  } else if (userInput === "paper") {
-    return userInput;
-  } else if (userInput === "scissors") {
-    return userInput;
-  } else if (userInput === "bomb") {
+  if (
+    userInput === "rock" ||
+    userInput === "paper" ||
+    userInput === "scissors" ||
+    userInput === "bomb"
+  ) {
     return userInput;
   } else {
-    console.log("Invalid choice");
-    return userInput;
+    console.log("Error...please enter 'rock', 'paper', or 'scissors'");
   }
 };
 
@@ -25,7 +23,7 @@ let getComputerChoice = function () {
   }
 };
 
-const determineWinner = function (userChoice, computerChoice) {
+let determineWinner = function (userChoice, computerChoice) {
   if (userChoice === computerChoice) {
     return "The game was a tie!";
   }
@@ -59,7 +57,7 @@ const determineWinner = function (userChoice, computerChoice) {
   }
 };
 
-const playGame = function () {
+let playGame = function () {
   let userChoice = getUserChoice("bomb");
   let computerChoice = getComputerChoice();
   console.log("User choice: " + userChoice);
